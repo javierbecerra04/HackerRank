@@ -49,3 +49,34 @@ FROM COUNTRY
 JOIN CITY
 ON COUNTRY.CODE = CITY.COUNTRYCODE
 GROUP BY COUNTRY.CONTINENT;
+
+-- The Report Challenge
+SELECT
+CASE
+    WHEN Marks >= 70 THEN Name
+    WHEN Marks < 70 THEN NULL
+END AS Name,
+CASE
+    WHEN Marks>=70 and Marks<80 THEN 8
+    WHEN Marks>=80 and Marks<90 THEN 9
+    WHEN Marks>=90 and Marks<=100 THEN 10
+END AS Grade,
+Marks AS Mark
+FROM Students
+WHERE Marks>=70
+ORDER BY Grade DESC,Name;
+SELECT
+NULL AS Name,
+CASE
+    WHEN Marks>=0 and Marks<10 THEN 1
+    WHEN Marks>=10 and Marks<20 THEN 2
+    WHEN Marks>=20 and Marks<30 THEN 3
+    WHEN Marks>=30 and Marks<40 THEN 4
+    WHEN Marks>=40 and Marks<50 THEN 5
+    WHEN Marks>=50 and Marks<60 THEN 6
+    WHEN Marks>=60 and Marks<70 THEN 7
+END AS Grade,
+Marks AS Mark
+FROM Students
+WHERE Marks<70
+ORDER BY Grade DESC,Marks ASC;
