@@ -21,7 +21,7 @@ FROM
     GROUP BY Occupation
     ORDER BY NumProf ASC,Occupation ASC) as a;
 
--- Occupations
+-- Occupations Challenge
 SET @r1=0, @r2=0, @r3 =0, @r4=0;
 SELECT MIN(Doctor), MIN(Professor), MIN(Singer), MIN(Actor) FROM
 (SELECT CASE Occupation WHEN 'Doctor' THEN @r1:=@r1+1
@@ -35,3 +35,10 @@ SELECT MIN(Doctor), MIN(Professor), MIN(Singer), MIN(Actor) FROM
        CASE WHEN Occupation = 'Actor' THEN Name END AS Actor
        FROM OCCUPATIONS ORDER BY Name) AS t
 GROUP BY RowLine;
+
+-- African Cities Challenge
+SELECT CITY.NAME
+FROM CITY
+LEFT JOIN COUNTRY
+ON CITY.COUNTRYCODE = COUNTRY.CODE
+WHERE COUNTRY.CONTINENT = "Africa";
