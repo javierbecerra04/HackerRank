@@ -11,3 +11,7 @@ else:
 print(a+b)
 print(a-b)
 print(a*b)
+
+#Python: Division
+print(a//b) #// operator is used for floor division
+print(a/b)
