@@ -15,3 +15,9 @@ print(a*b)
 #Python: Division
 print(a//b) #// operator is used for floor division
 print(a/b)
+
+#Loops
+if __name__ == '__main__':
+    n = int(input())
+    for i in range(0,n):
+        print(i*i)
