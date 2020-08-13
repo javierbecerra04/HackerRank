@@ -34,3 +34,14 @@ def is_leap(year):
 
 year = int(input())
 print(is_leap(year))
+
+#Print Function
+def PrintFunction(n):
+    a = ""
+    for i in range(1,n+1):
+        a=a+str(i)
+    print(a)
+
+if __name__ == '__main__':
+    n = int(input())
+    PrintFunction(n)
